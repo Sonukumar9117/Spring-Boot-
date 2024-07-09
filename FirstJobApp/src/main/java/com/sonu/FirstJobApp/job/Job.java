@@ -1,13 +1,22 @@
 package com.sonu.FirstJobApp.job;
 
+import jakarta.persistence.*;
+
+//This is a job class
+@Entity
+//@Table(name="job_tale")
 public class Job {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private  String title;
     private  String description;
     private String minSalary;
     private String maxSalary;
     private String location;
-
+    //This default constructor is required without it
+    public Job(){
+    }
     public Job(Long id, String title, String description, String minSalary, String location, String maxSalary) {
         this.id = id;
         this.title = title;
